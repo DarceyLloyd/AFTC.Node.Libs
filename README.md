@@ -9,4 +9,4 @@ A collection of utilities / functions I find useful when working with <b>NodeJS<
 ## Installation
 ```
 npm install aftc.node.libs
-'''
+```
