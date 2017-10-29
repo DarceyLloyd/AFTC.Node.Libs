@@ -1,0 +1,24 @@
+{
+  "name": "aftc.node.libs",
+  "version": "0.0.1",
+  "description": "A collection of libraries / utilities / tools that I use when working when developing nodejs applications.",
+  "main": "aftc.js",
+  "scripts": {
+    "test": "node aftc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarceyLloyd/AFTC.Node.Libs.git"
+  },
+  "keywords": [
+    "utilities",
+    "libraries",
+    "nodejs"
+  ],
+  "author": "darcey.lloyd@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarceyLloyd/AFTC.Node.Libs/issues"
+  },
+  "homepage": "https://github.com/DarceyLloyd/AFTC.Node.Libs#readme"
+}
