@@ -19,6 +19,8 @@ const debug = aftc.debug;
 const log = debug.log;
 const logStyle = debug.logStyle;
 
+logStyle();
+
 // debug examples
 // log("Console output default");
 // log("Console output of red text","red");
