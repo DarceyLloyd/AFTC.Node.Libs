@@ -16,17 +16,17 @@ I don't want a 1000 different packages looked up and installed each time I start
 ## A quick look at what's in the box
 
 - <b>DEBUG</b> (log, colorLog, nicer log outputs of objects and arrays)
-- <b>IO</b> (FileSystem utilities for downloading, reading, writing and existance checks)
-- <b>UTILS</b> (Utiltiies to assist with rapid development)
-- <b>PROCESS</b> (Utiltiies to assist with process, exec and fork)
-- <b>CONVERSION</b> (Utilities to assist with conversion)
-- <b>GFX</b> (Utilities to assist with anything graphical)
-- <b>AUDIO</b> (Utilities to assist with audio playback and processing)
-- <b>VIDEO</b> (Utiliteis to assist with video playback and processing)
-- <b>SERVER</b> (Utilities to assist with anything server related)
-- <b>EVENTS</b> (Utilities to assist with event handling)
-- <b>PARSERS</b> (Utilities to assist with parsing)
-- <b>ELECTRON</b> (Utilities to assis with electron)
+- <b>IO</b> (Utils/Tools to assist with downloading, reading, writing, exists, streaming etc)
+- <b>UTILS</b> (Utils/Tools to assist with common function & rapid development)
+- <b>PROCESS</b> (Utils/Tools to assist with process, exec and fork)
+- <b>CONVERSION</b> (Utils/Tools to assist with conversion)
+- <b>GFX</b> (Utils/Tools to assist with anything graphical)
+- <b>AUDIO</b> (Utils/Tools to assist with anything sound related)
+- <b>VIDEO</b> (Utiliteis to assist with anything video related)
+- <b>SERVER</b> (Utils/Tools to assist with anything server related)
+- <b>EVENTS</b> (Utils/Tools to assist with event handling)
+- <b>PARSERS</b> (Utils/Tools to assist with parsing)
+- <b>ELECTRON</b> (Utils/Tools to assis with electron)
 
 
 So you can have access to them all via:
