@@ -16,7 +16,8 @@ I don't want a 1000 different packages looked up and installed each time I start
 
 - <b>DEBUG</b> (log, colorLog, nicer log outputs of objects and arrays)
 - <b>IO</b> (FileSystem utilities for downloading, reading, writing and existance checks)
-- <b>DEV</b> (Utiltiies to assist with rapid development)
+- <b>UTILS</b> (Utiltiies to assist with rapid development)
+- <b>PROCESS</b> (Utiltiies to assist with process, exec and fork)
 - <b>CONVERSION</b> (Utilities to assist with conversion)
 - <b>GFX</b> (Utilities to assist with anything graphical)
 - <b>AUDIO</b> (Utilities to assist with audio playback and processing)
