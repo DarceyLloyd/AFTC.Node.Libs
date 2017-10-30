@@ -16,12 +16,32 @@ I don't want a 1000 different packages looked up and installed each time I start
 
 
 ## Details
-I don't want to go hunting for the latest and greates libraries or utilities all the time, so this gets deployed before any development starts and I know if I need file io, download, debug, development utilities 
+I don't want to go hunting for the latest and greates libraries or utilities all the time, so this gets deployed before any development starts and I know if I need file io, download, debug, development utilities
+
+
+## A quick look at what's in the box
+
+- <b>DEBUG</b> (log, colorLog, nicer log outputs of objects and arrays)
+- <b>IO</b> (FileSystem utilities for downloading, reading, writing and existance checks)
+- <b>DEV</b> (Utiltiies to assist with rapid development)
+- <b>CONVERSION</b> (Utilities to assist with conversion)
+- <b>GFX</b> (Utilities to assist with anything graphical)
+- <b>AUDIO</b> (Utilities to assist with audio playback and processing)
+- <b>VIDEO</b> (Utiliteis to assist with video playback and processing)
+- <b>SERVER</b> (Utilities to assist with anything server related)
+- <b>EVENTS</b> (Utilities to assist with event handling)
+- <b>PARSERS</b> (Utilities to assist with parsing)
+- <b>ELECTRON</b> (Utilities to assis with electron)
+- <b>NWJS</b> (Utilities to assis with nwjs)
+
+<br><br>
+
+
 
 
 ## Installation
 ```
-npm install aftc.node.libs
+npm i aftc.node.libs
 ```
 
 <br><br>
