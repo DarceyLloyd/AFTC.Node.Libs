@@ -34,13 +34,13 @@ Usage example can be found in file tests.js, which can be run via npm run test. 
 ```
 // Require AFTC.Node.Libs
 const aftc = require("../node_modules/aftc.node.libs/aftc.js");
-````
+```
 
 
 
 # <b>AFTC.Node.Libs > Debug</b>
 
-## log()
+## <b>log()</b>
 No more typing console.log, just type log from now on. Also has text and background color capabilities.
 ```
 const debug = aftc.debug;
@@ -49,12 +49,22 @@ const log = debug.log;
 log("Console output default");
 
 // Colors
-// log("Console output of red text",textColor,backgroundColor);
-log("Console output of black text with a white background","black","white");
-log("Console output of white text with a red background","white","red");
+// log("Output of red text",textColor,backgroundColor);
+log("I am black text on a white background","black","white");
+log("I am white text on a red background","white","red");
+log("I am red","red");
+log("I am red","green");
+log("I am red","yellow");
+log("I am red","blue");
+log("I am red","magenta");
+log("I am red","cyan");
+log("I am red","white");
+log("I am red","black");
 ```
 
-text and background colors available are:
+
+
+Options for textColor and backgroundColor are :
 - black
 - red
 - green
@@ -80,9 +90,11 @@ const log = debug.log;
 const logStyle = debug.logStyle;
 
 log("This text is white on black (your defaults)");
+
 logStyle("txt","red");
 logStyle("bg","yellow");
 log("This text is red text on yellow background");
+
 logStyle("reset");
 log("This text is back to your defaults");
 
@@ -92,8 +104,10 @@ log("This text is back to your defaults");
 
 ### Usage: logStyle(styleType,styleName)
 styleType options are:
-- text || txt
-- background || bg
+- text
+- txt
+- background
+- bg
 - special
 
 styleName options for styleType's of text and background are:
