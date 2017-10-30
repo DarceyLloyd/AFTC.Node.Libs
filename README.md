@@ -33,7 +33,7 @@ Usage example can be found in file tests.js, which can be run via npm run test. 
 
 ```
 // Require AFTC.Node.Libs
-const aftc = require ("./AFTC.Node.Libs.js");
+const aftc = require("../node_modules/aftc.node.libs/aftc.js");
 ````
 
 
@@ -53,6 +53,18 @@ log("Console output default");
 log("Console output of black text with a white background","black","white");
 log("Console output of white text with a red background","white","red");
 ```
+
+text and background colors available are:
+- black
+- red
+- green
+- yellow
+- blue
+- magenta
+- cyan
+- white
+
+
 <br><br>
 
 
@@ -77,6 +89,31 @@ log("This text is back to your defaults");
 // I pref to just use log("hello",textColor,bgColor);
 // eg log("hello","black","white")
 ```
+
+### Usage: logStyle(styleType,styleName)
+styleType options are:
+- text || txt
+- background || bg
+- special
+
+styleName options for styleType's of text and background are:
+- black
+- red
+- green
+- yellow
+- blue
+- magenta
+- cyan
+- white
+
+styleName options for styleType 'sepcial' are:
+- reset
+- bright
+- dim (this is default)
+- underline
+- inverse
+
+
 
 <br><br>
 

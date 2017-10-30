@@ -8,7 +8,7 @@ console.log("\n".repeat(100));
 
 
 // Require AFTC.Node.Libs
-const aftc = require ("./AFTC.Node.Libs.js");
+const aftc = require ("./aftc.js");
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -81,7 +81,7 @@ logStyle();
 const io = aftc.io;
 
 // Check if file exists
-var bFileExists1 = io.fileExists("./AFTC.Node.Libs.js");
+var bFileExists1 = io.fileExists("./aftc.js");
 //log("bFileExists1 = " + bFileExists1);
 
 // Check if dir exists
