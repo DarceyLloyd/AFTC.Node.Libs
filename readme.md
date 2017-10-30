@@ -35,7 +35,7 @@ So you can have access to them all via:
 ```
 const aftc = require("./aftc.js");
 
-// Then access each of the module from there
+// Then access each of the sub modules via aftc
 aftc.io.xxxx(args)
 aftc.conversion.xxxx(args)
 aftc.debug.xxxx(args)
