@@ -1,22 +1,15 @@
 # AFTC.Node.Libs
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Darcey%2eLloyd%40gmail%2ecom&lc=GB&item_name=Darcey%20Lloyd%20Developer%20Donation&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
-A collection of utilities / functions I find useful when working with NodeJS.
+A collection of utilities / functions I find useful when working with NodeJS features.
 
 I don't want a 1000 different packages looked up and installed each time I start a project, so I made this for quick and easy install to give me what I consider the essentials and get on with development.
-
-## NOTE: I am in the early stages of implementing all that is available in AFTC.js for the NodeJS version, main requirements will be completed soon.
-
 
 <br>
 
 #### Want the version for websites? https://github.com/DarceyLloyd/AFTC.js
 
 <br>
-
-
-## Details
-I don't want to go hunting for the latest and greates libraries or utilities all the time, so this gets deployed before any development starts and I know if I need file io, download, debug, development utilities
 
 
 ## A quick look at what's in the box
@@ -32,9 +25,25 @@ I don't want to go hunting for the latest and greates libraries or utilities all
 - <b>EVENTS</b> (Utilities to assist with event handling)
 - <b>PARSERS</b> (Utilities to assist with parsing)
 - <b>ELECTRON</b> (Utilities to assis with electron)
-- <b>NWJS</b> (Utilities to assis with nwjs)
 
-<br><br>
+So you can have access to them all via:
+ <b>aftc.io.<function_name></b>
+
+```
+const aftc = require("./aftc.js");
+
+// Then access each of the module from there
+aftc.io.xxxx(args)
+aftc.conversion.xxxx(args)
+aftc.debug.xxxx(args)
+aftc.events.xxxx(args)
+aftc.gfx.xxxx(args)
+aftc.server.xxxx(args)
+// etc
+```
+
+
+<br>
 
 
 
@@ -44,47 +53,48 @@ I don't want to go hunting for the latest and greates libraries or utilities all
 npm i aftc.node.libs
 ```
 
-<br><br>
+<br>
 
 
 # Usage
 
-Usage example can be found in file tests.js, which can be run via npm run test. Edit the file and uncomment out the test lines to see examples working.
+Usage examples can be found in file tests folder, check package.json for npm run commands.
 
 ```
 // Require AFTC.Node.Libs
 const aftc = require("../node_modules/aftc.node.libs/aftc.js");
 ```
 
-
+<br>
 
 # AFTC.Node.Libs > Debug
 
-## log()
+## <b>log(arg)</b>
 No more typing console.log, just type log from now on. Also has text and background color capabilities.
 ```
 const debug = aftc.debug;
 const log = debug.log;
 
-log("Console output default");
+log("Hello World");
 
-// Colors
-// log("Output of red text",textColor,backgroundColor);
-log("I am black text on a white background","black","white");
-log("I am white text on a red background","white","red");
-log("I am red","red");
-log("I am red","green");
-log("I am red","yellow");
-log("I am red","blue");
-log("I am red","magenta");
-log("I am red","cyan");
-log("I am red","white");
-log("I am red","black");
+// Coloring in things
+// log(varToOutput,textColor,backgroundColor);
+
+log("Black text on a white background","black","white");
+log("White text on a red background","white","red");
+log("Red text","red");
+log("Ged text","green");
+log("yellow text","yellow");
+log("blue text","blue");
+log("magenta text","magenta");
+log("cyan text","cyan");
+log("white text","white");
+log("black text","black");
 ```
 
 
 
-Options for textColor and backgroundColor are :
+Options for <b>textColor</b> and <b>backgroundColor</b> are :
 - black
 - red
 - green
@@ -95,7 +105,7 @@ Options for textColor and backgroundColor are :
 - white
 
 
-<br><br>
+<br>
 
 
 
@@ -149,7 +159,7 @@ styleName options for styleType 'sepcial' are:
 
 
 
-<br><br>
+<br>
 
 
 
@@ -174,7 +184,7 @@ if (fileExists){
 }
 
 ```
-<br><br>
+<br>
 
 
 
@@ -198,7 +208,7 @@ if (dirExists){
     // Doesn't exist
 }
 ```
-<br><br>
+<br>
 
 
 
@@ -215,7 +225,7 @@ const io = require("./io/io.js");
 
 io.writeFile("./config.json",jsonData);
 ```
-<br><br>
+<br>
 
 
 
@@ -235,7 +245,7 @@ if (!data){
     // ERROR
 }
 ```
-<br><br>
+<br>
 
 
 
@@ -255,7 +265,7 @@ const io = require("./io/io.js");
 
 io.md("./src/");
 ```
-<br><br>
+<br>
 
 
 
@@ -267,7 +277,7 @@ io.md("./src/");
 
 
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 
 ## Found this useful? Please Donate...
@@ -275,7 +285,7 @@ Any and all donations to help keep active development and the lights on are more
 
 [![paypal](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Darcey%2eLloyd%40gmail%2ecom&lc=GB&item_name=Darcey%20Lloyd%20Developer%20Donation&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 [![Hire](https://www.allforthecode.co.uk/images/pph_widget.jpg)](http://pph.me/Darcey)
 

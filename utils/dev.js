@@ -3,6 +3,10 @@
 */
 
 
+// require / imports / libs
+//const util = require('util');
+
+
 // debug
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 const debug = require("../debug/debug.js");
@@ -27,12 +31,17 @@ function isArray(obj) {
 
 
 
+
+
+
+
+
 // Methods, Aliases and Export
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // let cloned = Object.assign({}, source);
 const methods = {
     isArrayInString:isArrayInString,
-    isArray:isArray
+	isArray:isArray
 }
 
 module.exports = methods;

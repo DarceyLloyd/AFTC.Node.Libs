@@ -13,9 +13,29 @@ const dev = require("../utils/dev.js");
 
 const log = require("./log.js");
 const logStyle = require("./logStyle.js");
-const misc = require("./misc.js");
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function dumpProcessEnv() {
+    for (var i in process.env) {
+        console.log(i + " = " + process.env[i]);
+    }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function dumpObject(o) {
+    for (var i in o) {
+        console.log(i + " = " + o[i]);
+    }
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
@@ -28,18 +48,11 @@ const misc = require("./misc.js");
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // let cloned = Object.assign({}, source);
 var methods = {
-    logEnable: log.enableLog,
-    logDisable: log.disableLog,
-    enableLog: log.enableLog,
-    disableLog: log.disableLog,
-    log: log.log,
-    logStyle: logStyle,
-    dumpProcessEnv: misc.dumpProcessEnv,
-    logProcessEnv: misc.dumpProcessEnv,
-    dumpObject: misc.dumpObject,
-    dumpArray: misc.dumpObject
+    dumpProcessEnv: dumpProcessEnv,
+    logProcessEnv: dumpProcessEnv,
+    dumpObject: dumpObject,
+    dumpArray: dumpObject
 }
-//console.log(methods);
 
 module.exports = methods;
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
