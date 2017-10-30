@@ -1,10 +1,10 @@
 {
   "name": "aftc.node.libs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of libraries / utilities / tools that I use when working when developing nodejs applications.",
   "main": "aftc.js",
   "scripts": {
-    "test": "node aftc.js"
+    "test": "node tests.js"
   },
   "repository": {
     "type": "git",
