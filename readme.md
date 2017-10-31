@@ -12,7 +12,6 @@ I don't want a 1000 different packages looked up and installed each time I start
 
 <br>
 
-
 ## A quick look at what's in the box
 
 - <b>DEBUG</b> (log, colorLog, nicer log outputs of objects and arrays)
@@ -28,6 +27,39 @@ I don't want a 1000 different packages looked up and installed each time I start
 - <b>EVENTS</b> (Utils/Tools to assist with event handling)
 - <b>PARSERS</b> (Utils/Tools to assist with parsing)
 - <b>ELECTRON</b> (Utils/Tools to assis with electron)
+
+NOTE: Debug, IO, Utils and proces are in development at the moment, the rest will come later, more information below.
+
+
+<br><br><br>
+
+## Would you like to add a utility / function?
+Got a function that covers a specific task in one of these categories that you would like to add? Email it to me, detailing what it does and I will give it a review.
+
+
+
+<br><br>
+<br><br>
+
+
+# Installation
+```
+npm i aftc.node.libs
+```
+
+<br>
+<br>
+
+
+# Usage
+
+Usage examples can be found in file tests folder, check package.json for npm run commands.
+
+```
+// Require AFTC.Node.Libs
+const aftc = require("../node_modules/aftc.node.libs/aftc.js");
+```
+
 
 
 So you can have access to them all via:
@@ -71,12 +103,12 @@ const writeFile = require("./node_modules/io/writeFile.js);
 
 
 
-<br><br>
+<br><br><br>
 
 
 
 
-## <b>What's new?</b>
+# <b>What's new?</b>
 - new addtion <b>logTo(string,file,append)</b>
 - enhanced log further, now returns what it logs, useful for dumping what it logs to logTo
 - added now module to the todo list <b>detection</b>, I will be adding detection for:
@@ -110,32 +142,17 @@ Then a bit of clean up...
 <br>
 <br>
 <br>
-
-
-## Installation
-```
-npm i aftc.node.libs
-```
-
 <br>
 <br>
 
 
-## Usage
-
-Usage examples can be found in file tests folder, check package.json for npm run commands.
-
-```
-// Require AFTC.Node.Libs
-const aftc = require("../node_modules/aftc.node.libs/aftc.js");
-```
-
-<br><br>
+# <b>What's really in the box and how to use it</b>
+<br>
 
 # AFTC.Node.Libs > Debug
 
 ## <b>log(arg)</b>
-No more typing console.log, just type log from now on. Also has text and background color capabilities.
+No more typing console.log, just type log from now on. Also has text and background <b>color capabilities</b>.
 ```
 const debug = aftc.debug;
 const log = debug.log;
@@ -237,7 +254,28 @@ styleName options for styleType 'sepcial' are:
 
 NOTE: If you supply a relative path logTo will attempt to write to the directory where package.json resides, it does this via relative pathing, if it gets it wrong let me know and where it goes to on your system. Works fine for me in Windows and Ubuntu.
 
+```
+var a = 1;
+var b = 2;
+var c = "hello world";
+var msg = "";
+msg += "a = " + a + "\n";
+msg += "b = " + b + "\n";
+msg += "c = " + c + "\n";
 
+logTo(msg,"./out.txt");
+```
+
+
+Want to append to your file instead of clean each time you use logTo? Use it with the 3rd paramater set to true eg.
+
+```
+var line1 = "Email: Darcey@AllForTheCode.co.uk\n";
+var line2 = "Location: UK\n";
+logTo(line1,"./out.txt",true);
+logTo(line2,"./out.txt",true);
+
+```
 
 <br><br><br>
 
