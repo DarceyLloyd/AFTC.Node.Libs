@@ -33,8 +33,8 @@ NOTE: Debug, IO, Utils and proces are in development at the moment, the rest wil
 
 <br><br><br>
 
-## Would you like to add a utility / function?
-Got a function that covers a specific task in one of these categories that you would like to add? Email it to me, detailing what it does and I will give it a review.
+### <b>Would you like to add a utility / function?</b>
+Got a function that covers a specific task in one of these module categories above that you would like to add? Email it to me darcey@allforthecode.co.uk (gist link or attach txt file), detailing what it does and I will give it a review to see if it fits in with aftc.node.libs suite.
 
 
 
@@ -58,6 +58,9 @@ Usage examples can be found in file tests folder, check package.json for npm run
 ```
 // Require AFTC.Node.Libs
 const aftc = require("../node_modules/aftc.node.libs/aftc.js");
+
+const log = aftc.debug.log;
+const logTo = aftc.debug.logTo;
 ```
 
 
@@ -98,6 +101,14 @@ const logStyle = require("./node_modules/debug/logStyle.js);
 
 const readFile = require("./node_modules/io/readFile.js);
 const writeFile = require("./node_modules/io/writeFile.js);
+```
+
+## I pref to use it like this
+
+```
+const aftc = require("./node_modules/aftc.js");
+const log = aftc.debug.log;
+const logTo = aftc.debug.logTo;
 ```
 
 
