@@ -28,7 +28,7 @@ function logTo(msg,logFile,append=false){
         //log("logFile [" + logFile + "] is absolute");
     } else {
         //log("logFile [" + logFile + "] is relative");
-        savePath = __dirname + "\\..\\" + logFile;
+        savePath = __dirname + "\\..\\..\\..\\" + logFile;
     }
 
     //log("savePath [" + savePath + "] before normalize","yellow")
@@ -40,9 +40,6 @@ function logTo(msg,logFile,append=false){
     // fs.closeSync(fs.openSync(savePath, 'w'));
     //io.writeFile(msg,savePath);
 
-    var callBackHandler = function(e){
-        log(e);
-    }
     //fs.writeFile('message.txt', 'Hello Node.js', 'utf8', callback);
     //fs.writeFile('message.txt', 'Hello Node.js', 'utf8', callBackHandler);
 
@@ -53,7 +50,10 @@ function logTo(msg,logFile,append=false){
     fs.open(savePath, flag, function(err, fd) { 
         fs.writeFile(savePath, msg, {'flag':flag}, function(e){
             if (e){
+                log("aftc.node.libs > debug > logTo failed to write to: [" + savePath + "]","white","red");
                 throw(e);
+            } else {
+                log("logTo has written to: [" + savePath + "]","green")l
             }
         });
     });
