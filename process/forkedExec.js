@@ -1,3 +1,11 @@
+// debug
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+const debug = require("../debug/debug.js");
+const log = debug.log;
+const utils = debug.utils;
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 
 function exec(programPath) {
     var exec = require('child_process').execFile;
@@ -7,8 +15,8 @@ function exec(programPath) {
         exec(programPath, function (err, data) {
             const debug = require("../debug/debug.js");
             const log = debug.log;
-            if (err){
-                log(err,"red");
+            if (err) {
+                log(err, "red");
             }
             log(data.toString());
         });
@@ -17,7 +25,21 @@ function exec(programPath) {
 }
 
 
-console.log("hello");
+let o = {
+    name:"Darcey Lloyd",
+    job: "Web Developer",
+    location: "UK"
+}
+
+//console.log( JSON.stringify(o) );
+
+//console.log( JSON.stringify(process.argv) );
+
+//console.log("hello");
+log(process.argv);
+
+var app = process.argv[2] + "";
+exec(app)
 
 
 

@@ -57,10 +57,6 @@ if (!colors) {
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function logStyle(styleType, styleName) {
-    if (!logEnabled) {
-        return;
-    }
-
     if (styleType) {
         styleType = styleType.toLowerCase();
     }

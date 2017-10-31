@@ -4,9 +4,11 @@
 
 // Resouce:
 // https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a
+// https://stackoverflow.com/questions/12871740/how-to-detach-a-spawned-child-process-in-a-node-js-script
+// child.stdout.pipe(wc.stdin);
 
 
- // require / imports / libs
+// require / imports / libs
 //const util = require('util');
 
 
@@ -69,9 +71,11 @@ function exec(programPath) {
 
 function spawnExec(path) {
     const spawn = require('child_process').spawn;
-    let params = {
-
-    };
+    let params = [
+        './process/forkedExec.js',
+        "c:\\windows\\notepad.exe",
+        "c:\\bdlog.txt"
+    ];
 
     let p = __dirname + "\\forkedExec.js";
     p = "./forkedExec.js";
@@ -81,28 +85,27 @@ function spawnExec(path) {
 
     try {
         //var child = spawn("dir");
-        const child = spawn('node', ['./process/forkedExec.js']);
+        const child = spawn('node', params);
 
-        //child.stdout.pipe(wc.stdin);
+
 
         child.stdout.on('data', (data) => {
-            log(`child stdout:\n${data}`,"green");
+            log(`child stdout:\n${data}`, "green");
         });
 
         child.stderr.on('data', (data) => {
-            log(`child stderr:\n${data}`,"red");
+            log(`child stderr:\n${data}`, "red");
         });
         child.on('exit', function (code, signal) {
-            log("on(exit):","green");
-            log("on(exit):","green");
-            log("child process exited with code ${code} and signal ${signal}");
+            log("on(exit):", "green");
+            log("child process exited with code [" + code + "] and signal [" + signal + "]");
         });
         child.on('error', function (e) {
-            log("on(error):");
+            log("on(error):", "red");
             log(e);
         });
     } catch (e) {
-        log("Catch(e):");
+        log("Catch(e):", "red");
         log(e);
     }
 
