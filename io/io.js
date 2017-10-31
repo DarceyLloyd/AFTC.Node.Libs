@@ -3,9 +3,9 @@
  */
 
 
-const debug = require("../debug/debug.js");
-const log = debug.log;
+const log = require("../debug/log.js").log;
 const fs = require('fs');
+
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -75,15 +75,16 @@ function xxxx(path) {
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-function writeFile(path, data) {
-    fs.writeFile(path, data, function (e) {
+function writeFile(msg, data) {
+    function responseHandler(e){
         if (e) {
             log(e);
             return false;
         } else {
             return true;
         }
-    });
+    }
+    fs.writeFile(msg, data, responseHandler);
 }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

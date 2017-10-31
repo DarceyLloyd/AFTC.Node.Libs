@@ -1,12 +1,13 @@
 {
   "name": "aftc.node.libs",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A collection of utilities / tools for use with nodejs development.",
   "main": "aftc.js",
   "scripts": {
     "test": "node ./tests/test.js",
-    "test-log": "node ./tests/log.js",
+    "test-log": "node ./tests/log.js",    
     "test-logStyle": "node ./tests/logStyle.js",
+    "test-logTo": "node ./tests/logTo.js",
     "test-io": "node ./tests/io.js"
   },
   "repository": {

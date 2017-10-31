@@ -13,6 +13,8 @@ const dev = require("../utils/dev.js");
 
 const log = require("./log.js");
 const logStyle = require("./logStyle.js");
+const logTo = require("./logTo.js");
+
 const misc = require("./misc.js");
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -34,6 +36,7 @@ var methods = {
     disableLog: log.disableLog,
     log: log.log,
     logStyle: logStyle,
+    logTo:logTo,
     dumpProcessEnv: misc.dumpProcessEnv,
     logProcessEnv: misc.dumpProcessEnv,
     dumpObject: misc.dumpObject,

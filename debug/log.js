@@ -72,6 +72,8 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
     if (!logEnabled) {
         return;
     }
+
+    var out = "";
     
     // console.log("arg1 = " + arg1)
     // console.log("arg2 = " + arg2)
@@ -84,7 +86,6 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
 
     // Encapsulate for recursion within this function
     function logit() {
-
         let arg1Type = typeof (arg1);
         let baseIndent = "";
         let subIndent = "";
@@ -139,7 +140,9 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                             
                         // }
                         //console.log(subIndent + subVarLabel + "key[" + key + "] = " + arg1[key] + " " + typeof(arg1[key]));
-                        console.log(subIndent + subVarLabel + "[" + key + "] = " + arg1[key]);
+                        let cout = subIndent + subVarLabel + "[" + key + "] = " + arg1[key];
+                        out += cout;
+                        console.log(cout);
                         if (itemType == "object") {
                             let nextNest = nest + 1;
                             let nextSubVarLabel = subVarLabel + "[" + key + "].";
@@ -157,6 +160,7 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                 //     break;
             default:
                 console.log(arg1);
+                out += "\n";
                 break;
         }
         
@@ -164,7 +168,10 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
         // When all is done add a new line (enhances readability)
         if (nest > 0){
             console.log("");
+            out += "\n";
         }
+
+        return out;
     }
 
 
@@ -194,6 +201,8 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
         process.stdout.write(colors.reset);
         //console.log(""); // use console.log for \n so that it handles new lines
     }
+
+    return out;
 }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

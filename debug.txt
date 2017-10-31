@@ -1,0 +1,7 @@
+
+dateTime = Tue Oct 31 2017 20:27:25 GMT+0000 (GMT Standard Time)
+__dirname = W:\www\git\AFTC.Node.Libs\tests
+process.env.LOCALAPPDATA = C:\Users\darce\AppData\Local
+process.env.APPDATA = C:\Users\darce\AppData\Roaming
+process.env.npm_config_cache = C:\Users\darce\AppData\Roaming\npm-cache
+process.env.xxxxxxxxx = undefined
