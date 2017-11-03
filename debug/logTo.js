@@ -53,7 +53,7 @@ function logTo(msg,logFile,append=false){
                 log("aftc.node.libs > debug > logTo failed to write to: [" + savePath + "]","white","red");
                 throw(e);
             } else {
-                log("logTo has written to: [" + savePath + "]","green")l
+                log("logTo has written to: [" + savePath + "]","green");
             }
         });
     });
