@@ -23,6 +23,9 @@ I don't want a 1000 different packages looked up and installed each time I start
 
 <br><br><br>
 
+- Added readFileAsync(path,callback); // returns data or error object
+- Added readFileSync(path,callback); // returns data or error object
+
 
 
 

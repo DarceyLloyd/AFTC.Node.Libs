@@ -94,14 +94,29 @@ function writeFile(msg, data) {
 function readFile(path, data) {
     fs.readFile(path, function (e, data) {
         if (e) {
-            //log(e);
-            return false;
+            return e;
         } else {
             return data;
         }
     });
 }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function readFileAsync(path,callback){
+    fs.readFile(path, 'utf8', function (err, data) {
+        if (err) {
+            throw err;
+            return err;
+        } else {
+            return data;
+        }
+      });
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function readFileSync(path,callback){
+    return ( fs.readFileSync(path, 'utf8') );
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 
 
