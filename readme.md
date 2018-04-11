@@ -42,6 +42,8 @@ Usage examples can be found in file tests folder, check package.json for npm run
 ```
 // Require AFTC.Node.Libs
 const aftc = require("../node_modules/aftc.node.libs/aftc.node.libs.js");
+//or 
+const aftc = require("aftc.node.libs");
 
 const log = aftc.debug.log;
 const logTo = aftc.debug.logTo;
@@ -53,6 +55,8 @@ So you can have access to them all via:
 ```
 // Everything
 const aftc = require("../node_modules/aftc.node.libs/aftc.node.libs.js");
+//or 
+const aftc = require("aftc.node.libs");
 
 aftc.debug.log
 aftc.debug.logTo
