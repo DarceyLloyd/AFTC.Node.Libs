@@ -1,15 +1,16 @@
 /*
  * Author: Darcey.Lloyd@gmail.com
- * 
+ *
  * Resources
  * https://ourcodeworld.com/articles/read/298/how-to-show-colorful-messages-in-the-console-in-node-js
- * 
+ *
  */
 
 
 // require / includes
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 const dev = require("../utils/dev.js");
+const fs = require('fs');
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -51,6 +52,9 @@ var colors = {
 
 
 var logEnabled = true;
+var logFile = "./out.txt";
+var logToFileEnabled = false;
+var aftcLogger;
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -59,9 +63,15 @@ var logEnabled = true;
 function enableLog() {
     logEnabled = true;
 }
-
 function disableLog() {
     logEnabled = false;
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function enableLogToFile() {
+    logToFileEnabled = true;
+}
+function disableLogToFile() {
+    logToFileEnabled = false;
 }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -73,8 +83,9 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
         return;
     }
 
+
     var out = "";
-    
+
     // console.log("arg1 = " + arg1)
     // console.log("arg2 = " + arg2)
     // console.log("arg3 = " + arg3)
@@ -82,6 +93,11 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
     if (arg1 == null || arg1 == undefined) {
         console.log("You attempted to log a datatype of " + typeof (arg1) + " with a value of [" + arg1 + "]");
         return;
+    }
+
+    function logToFile(str){
+        var aftcLogger = fs.createWriteStream(logFile, {flags : 'a'});
+        aftcLogger.write(str + "\n");
     }
 
     // Encapsulate for recursion within this function
@@ -119,13 +135,14 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                         itemType = itemType.toLowerCase();
                         // TODO: Handle "object Object" which is a typeof string!
                         // if (itemType == "string" && v == "[object Object]") {
-                            
+
                         // }
                         //console.log(subIndent + subVarLabel + "key[" + key + "] = " + arg1[key] + " " + typeof(arg1[key]));
                         console.log(subIndent + subVarLabel + "[" + key + "] = " + arg1[key]);
                         if (itemType == "object") {
                             let nextNest = nest + 1;
                             let nextSubVarLabel = subVarLabel + "[" + key + "].";
+                            if (logToFileEnabled){ logToFile(v); }
                             log(v, "", "", nextNest, nextSubVarLabel);
                         }
                     });
@@ -137,7 +154,7 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                         itemType = itemType.toLowerCase();
                         // TODO: Handle "object Object" which is a typeof string!
                         // if (itemType == "string" && v == "[object Object]") {
-                            
+
                         // }
                         //console.log(subIndent + subVarLabel + "key[" + key + "] = " + arg1[key] + " " + typeof(arg1[key]));
                         let cout = subIndent + subVarLabel + "[" + key + "] = " + arg1[key];
@@ -146,6 +163,7 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                         if (itemType == "object") {
                             let nextNest = nest + 1;
                             let nextSubVarLabel = subVarLabel + "[" + key + "].";
+                            if (logToFileEnabled){ logToFile(v); }
                             log(v, "", "", nextNest, nextSubVarLabel);
                         }
                     });
@@ -159,16 +177,18 @@ function log(arg1 = "", arg2 = "", arg3 = "", nest = 0, subVarLabel = "") {
                 //     console.log(arg1 + " [number]");
                 //     break;
             default:
-                console.log(arg1);
+                if (logToFileEnabled){ logToFile(arg1); }
+                console.log(arg1 + "\n");
                 out += "\n";
                 break;
         }
-        
+
 
         // When all is done add a new line (enhances readability)
         if (nest > 0){
             console.log("");
             out += "\n";
+            if (logToFileEnabled){ logToFile(out); }
         }
 
         return out;
@@ -220,6 +240,8 @@ var methods = {
     disableLog: disableLog,
     enable:enableLog,
     disable:disableLog,
+    enableLogToFile:enableLogToFile,
+    disableLogToFile:disableLogToFile,
     log: log
 }
 

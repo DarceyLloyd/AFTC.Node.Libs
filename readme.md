@@ -23,6 +23,13 @@ I don't want a 1000 different packages looked up and installed each time I start
 
 <br><br><br>
 
+- Log (auto file logging when enabled)
+```
+    const aftc = require("aftc.node.libs");
+    aftc.debug.enableLogToFile();
+    // log will now also log to a file "out.txt"
+    log("hello world");
+```
 - Added readFileAsync(path,callback); // returns data or error object
 - Added readFileSync(path,callback); // returns data or error object
 

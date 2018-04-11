@@ -32,6 +32,8 @@ const misc = require("./misc.js");
 var methods = {
     logEnable: log.enableLog,
     logDisable: log.disableLog,
+    enableLogToFile: log.enableLogToFile,
+    disableLogToFile: log.disableLogToFile,
     enableLog: log.enableLog,
     disableLog: log.disableLog,
     log: log.log,
