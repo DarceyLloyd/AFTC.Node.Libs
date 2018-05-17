@@ -1,6 +1,6 @@
 {
   "name": "aftc.node.libs",
-  "version": "0.1.25",
+  "version": "0.2.4",
   "description": "A collection of utilities / tools for use with nodejs development.",
   "main": "aftc.node.libs.js",
   "scripts": {

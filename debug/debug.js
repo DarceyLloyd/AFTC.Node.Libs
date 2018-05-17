@@ -26,19 +26,21 @@ const misc = require("./misc.js");
 
 
 
+
 // Methods, Aliases and Export
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // let cloned = Object.assign({}, source);
 var methods = {
-    logEnable: log.enableLog,
-    logDisable: log.disableLog,
-    enableLogToFile: log.enableLogToFile,
-    disableLogToFile: log.disableLogToFile,
-    enableLog: log.enableLog,
-    disableLog: log.disableLog,
-    log: log.log,
-    logStyle: logStyle,
-    logTo:logTo,
+    // logEnable: log.enableLog,
+    // logDisable: log.disableLog,
+    // enableLogToFile: log.enableLogToFile,
+    // disableLogToFile: log.disableLogToFile,
+    // enableLog: log.enableLog,
+    // disableLog: log.disableLog,
+    // log: log.log,
+    // logStyle: logStyle,
+    // logTo:logTo,
+    log: log,
     dumpProcessEnv: misc.dumpProcessEnv,
     logProcessEnv: misc.dumpProcessEnv,
     dumpObject: misc.dumpObject,

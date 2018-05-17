@@ -415,5 +415,7 @@ Any and all donations to help keep active development and the lights on are more
 
 <br><br><br><br>
 
-[![Hire](https://www.allforthecode.com/images/pph_widget.jpg)](http://pph.me/Darcey)
+
+
+<a href="http://pph.me/Darcey" target="_blank" title="I am available for hire, click here!">![Hire](http://www.allforthecode.com/images/pph_widget.jpg)</a>
 
